@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Daftar Barang</title>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/brg-controller.js"></script>
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    
+    </head>
+    <body ng-app="BrgApp" class="container">
+        
+        <div class="jumbotron">
+            <h1>Daftar Barang</h1>
+            
+        </div>
+        <div class="well" ng-controller="BrgController">
+        <div class="row">
+        <div class="col-md-6 text-left">
+            <a href="/tambah" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-plus-sign"></span> Tambah Data</a>
+        </div>
+        <div class="col-md-6 text-right">
+        <button class="btn btn-danger2" ng-click="keluar()"><span class="glyphicon glyphicon-log-out"></span> Keluar</button>
+        
+        </div>
+        </div><br/> <br/>
+            <table class="table table-bordered table-striped table-hovered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAMA BARANG</th>
+                        <th>JENIS BARANG</th>
+                        <th width="200px">AKSI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="brg in daftarBrg">
+                        <td>{{ brg.id }}</td>
+                        <td>{{ brg.nama }}</td>
+                        <td>{{ brg.jenis_barang }}</td>
+                        <td>
+                        <button class="btn btn-warning" ng-click="ubah(brg)"><span class="glyphicon glyphicon-edit"></span> Ubah</button>
+                        <button class="btn btn-danger" ng-click="hapus(brg)"><span class="glyphicon glyphicon-trash"></span> Hapus</button></td>
+                        
+                    </tr>
+                </tbody>
+                
+            </table>
+            
+        </div>
+        <script src="/bootstrap/js/jquery-1.11.3.min.js"></script>
+        
+        <script src="/bootstrap/js/bootstrap.min.js"></script>
+    
+
+
+            
+
+    </body>
+</html>
